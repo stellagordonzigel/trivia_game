@@ -11,3 +11,19 @@ h2 {
   display: block;
   margin: auto;
 }
+
+#buttonA {
+  background-color: rgba(234, 24, 29, .5);
+}
+
+#buttonB {
+  background: rgba(1, 179, 232, .5);
+}
+
+#buttonC {
+  background: rgba(251, 189, 14, .5);
+}
+
+#buttonD {
+  background: rgba(234, 24, 29, .5);
+}
