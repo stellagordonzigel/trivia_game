@@ -1,0 +1,13 @@
+h2 {
+  text-align: center;
+}
+
+.fit {
+  max-width: 75%;
+  max-height: 75%;
+}
+
+.center {
+  display: block;
+  margin: auto;
+}
