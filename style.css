@@ -12,7 +12,21 @@ h2 {
   margin: auto;
 }
 
-#buttonA {
+.button-container {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+
+.answerChoice {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: none;
+  margin-top: 50px;
+}
+
+#buttonA, #buttonD {
   background-color: rgba(234, 24, 29, .5);
 }
 
@@ -22,8 +36,4 @@ h2 {
 
 #buttonC {
   background: rgba(251, 189, 14, .5);
-}
-
-#buttonD {
-  background: rgba(234, 24, 29, .5);
 }
