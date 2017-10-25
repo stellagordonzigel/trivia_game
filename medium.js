@@ -145,8 +145,8 @@ $(document).ready(function() {
   function gameStart () {
     index = 0
     // $('.question').append('<button id="start-button"><img src="friends-group-photo.jpg">Start Game</button>')
-    $('.question').append('<button id="start-button">Easy</button>')
-    $('#start-button').on('click', function () {
+    $('.question').append('<button id="medium-start">Medium</button>')
+    $('#medium-start').on('click', function () {
       $(this).hide()
       questionAppearsOnPage(index)
     })
