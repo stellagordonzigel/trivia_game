@@ -1,10 +1,19 @@
-/*body {
-  background-image: url('friends-picture-frame.png')
-}*/
+@font-face {
+  font-family: friends;
+  src: url(FRIENDS_.TTF);
+}
+
+body {
+  background: rgba(141, 128, 175, .7);
+  font-family: friends;
+}
+
+img {
+  padding-top: 30px;
+}
 
 h1 {
   text-align: center;
-  font-family: Arial, sans-serif;
 }
 
 .fit {
@@ -24,7 +33,7 @@ h1 {
 }
 
 /*.answerChoice { if i use image as button, .answerChoice will have its own style*/
-.answerChoice, #start-button, #medium-start, #hard-start {
+.answerChoice, #easy-button, #medium-start, #hard-start {
   width: 200px;
   height: 200px;
   border-radius: 50%;
@@ -35,7 +44,14 @@ h1 {
 .question {
   font-family: Arial, sans-serif;
   text-align: center;
+  display: flex;
+  justify-content: center;
 }
+
+.level-button {
+  margin: 0 10px;
+}
+
 
 /*if i use image as button -- come back
 #start-button {
@@ -45,7 +61,7 @@ h1 {
   margin: auto;
 }*/
 
-#buttonA, #buttonD, #start-button {
+#buttonA, #buttonD, #easy-button {
   background-color: rgba(234, 24, 29, .5);
 }
 
