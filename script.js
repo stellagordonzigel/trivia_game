@@ -130,4 +130,74 @@ $(document).ready(function() {
     flags: [false, false, false, true],
     answer: 'd) Nicole Kidman'
   }
+
+  var arrayQuestions = [q1, q2, q3, q4, q5, q6, q7, q8, q9, q10]
+
+  function questionAppearsOnPage (answerSelection) {
+    console.log(answerSelection)
+    $('.question').html("<h3>" + arrayQuestions[answerSelection].question + "</h3")
+    $('#buttonA').text(arrayQuestions[answerSelection].possibleAnswers[0]).show()
+    $('#buttonB').text(arrayQuestions[answerSelection].possibleAnswers[1]).show()
+    $('#buttonC').text(arrayQuestions[answerSelection].possibleAnswers[2]).show()
+    $('#buttonD').text(arrayQuestions[answerSelection].possibleAnswers[3]).show()
+  }
+
+  function gameStart () {
+    index = 0
+    $('.question').append('<button id="start-button">Start Game</button>')
+    $('#start-button').on('click', function () {
+      $(this).hide()
+      questionAppearsOnPage(index)
+    })
+  }
+
+  function getAnswer () {
+    $('answerChoice').on('click', function () {
+      $('.question').text('')
+      $('#buttonA').text('')
+      $('#buttonB').text('')
+      $('#buttonC').text('')
+      $('#buttonD').text('')
+      questionAppearsOnPage()
+    })
+  }
+
+  gameStart()
+  $('answerChoice').on('click', function () {
+    if(this.id === 'buttonA') {
+      var answerChosen = 'a'
+    } else if (this.id === 'buttonB') {
+      answerChosen = 'b'
+    } else if (this.id === 'buttonC') {
+      answerChosen = 'c'
+    } else if (this.id === 'buttonD') {
+      answerChosen = 'd'
+    }
+
+    if ((answerChosen === 'a') && (arrayQuestions[index].flags[0] === true)) {
+      correctAnswer()
+    } else if (answerChosen === 'a') {
+      wrongAnswer()
+    }
+
+    if ((answerChosen === 'b') && (arrayQuestions[index].flags[1] === true)) {
+      correctAnswer()
+    } else if (answerChosen === 'b') {
+      wrongAnswer()
+    }
+
+    if ((answerChosen === 'c') && (arrayQuestions[index].flags[2] === true)) {
+      correctAnswer()
+    } else if (answerChosen === 'c') {
+      wrongAnswer()
+    }
+
+    if ((answerChosen === 'd') && (arrayQuestions[index].flags[3] === true)) {
+      correctAnswer()
+    } else if (answerChosen === 'd') {
+      wrongAnswer()
+    }
+    })
+
+
 })
