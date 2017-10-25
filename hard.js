@@ -3,139 +3,181 @@ $(document).ready(function() {
   // let wrong = 0
 
   var q1 = {
-    question: 'What soap opera did Joey star in?',
-    possibleAnswers:
-      [
-        'a) Days of Our Lives',
-        'b) One Life to Live',
-        'c) General Hospital',
-        'd) Passions'
-      ],
-    flags: [true, false, false, false],
-    answer: 'a) Days of Our Lives'
+    question: "How many states did Joey get in 'Chandler's dumb states game'?",
+    possibleAnswers: ['a) 14', 'b) 48', 'c) 56', 'd) 30'],
+    flags: [false, false, true, false],
+    answer: 'c) 56'
   }
 
   var q2 = {
-    question: 'Whose name did Ross say at the altar?',
-    possibleAnswers:
-      [
-        'a) Emily',
-        'b) Phoebe',
-        'c) Rachel',
-        'd) Susan'
-      ],
+    question: 'Ross made up a fake boyfriend for Phoebe, what was his name and profession?',
+    possibleAnswers: [
+      'a) Gary, Cop',
+      'b) David, Scientist',
+      'c) Vikram, Kite Designer',
+      'd) Duncan, Ice Dancer'
+    ],
     flags: [false, false, true, false],
-    answer: 'c) Rachel'
+    answer: 'c) Vikram, Kite Designer'
   }
 
   var q3 = {
-    question: 'What is the name of Central Perks barista?', //how do you add a ' in the text?
-    possibleAnswers:
-      [
-        'a) Adam',
-        'b) Carlos',
-        'c) Mark',
-        'd) Gunther'
-      ],
-    flags: [false, false, false, true],
-    answer: 'd) Gunther'
+    question: 'Whose son did Monica invite to Thanksgiving?',
+    possibleAnswers: ['a) Richard', 'b) Paulo', 'c) Ross', 'd) Gunther'],
+    flags: [true, false, false, false],
+    answer: 'a) Richard'
   }
 
   var q4 = {
-    question: 'What was Monicas nickname when she was a field hockey goalie?', // ' in text
-    possibleAnswers:
-      [
-        'a) Big fat goalie',
-        'b) Brick wall',
-        'c) Monica the goalie',
-        'd) Shot blocker'
-      ],
+    question: "What does Erica suggest to Chander the baby's name should be if it's a boy?",
+    possibleAnswers: [
+      'a) Jiminy Billy Bob',
+      'b) Shovely Joe',
+      'c) Billy Bob',
+      'd) Bing-a-ling Bing'
+    ],
     flags: [true, false, false, false],
-    answer: 'a) Big fat goalie'
+    answer: 'a) Jiminy Billy Bob'
   }
 
   var q5 = {
-    question: 'What was the original name Ross picked for his and Rachels baby?',
-    possibleAnswers:
-      [
-        'a) Isabella',
-        'b) Talula',
-        'c) Delilah',
-        'd) Emma'
-      ],
-    flags: [true, false, false, false],
-    answer: 'a) Isabella'
+    question: 'What soap opera star did Rachel go on a date with?',
+    possibleAnswers: [
+      'a) David Canary',
+      'b) Stuart Damon',
+      'c) Kash Ford',
+      'd) Jonathan Jackson'
+    ],
+    flags: [false, false, true, false],
+    answer: 'c) Kash Ford'
   }
 
   var q6 = {
-    question: 'Where does the show take place?',
-    possibleAnswers:
-      [
-        'a) New York City',
-        'b) Los Angeles',
-        'c) San Francisco',
-        'd) Seattle'
-      ],
+    question: "Phoebe sets Rachel up on a blind date, what is the date's profession?",
+    possibleAnswers: [
+      'a) Sells silk screen t-shirts',
+      'b) Owns a restaurant',
+      'c) Kite Designer',
+      'd) Ice Dancer'
+    ],
     flags: [true, false, false, false],
-    answer: 'a) New York City'
+    answer: 'a) Sells silk screen t-shirts'
   }
 
   var q7 = {
-    question: 'How many seasons of Friends are there?',
-    possibleAnswers:
-      [
-        'a) 8',
-        'b) 7',
-        'c) 9',
-        'd) 10'
-      ],
-    flags: [false, false, false, true],
+    question: "What is Ross's comic book called?",
+    possibleAnswers: [
+      'a) Dino Boy',
+      'b) Science Boy',
+      'c) Science Man',
+      'd) Science Kid'
+    ],
+    flags: [false, true, false, false],
+    answer: 'b) Science Boy'
   }
 
   var q8 = {
-    question: 'Which of the following ways did Mike NOT propose to Phoebe?',
-    possibleAnswers:
-      [
-        'a) In Barbados at Ross conference',
-        'b) On the Jumbotron at a New York Knicks game',
-        'c) In Central Perk after Phoebe performed',
-        'd) Hid the ring in a piece of cake at a restaurant'
-      ],
-    flags: [false, false, true, false],
-    answer: 'c) In Central Perk after Phoebe performed'
+    question: "In 'The One That Could Have Been', where does Phoebe work?",
+    possibleAnswers: [
+      'a) Morgan Stanley',
+      'b) Ernst and Young',
+      'c) JP Morgan Chase',
+      'd) Merrill Lynch'
+    ],
+    flags: [false, false, false, true],
+    answer: 'd) Merrill Lynch'
   }
 
   var q9 = {
-    question: 'How many times has Ross been married?',
-    possibleAnswers:
-      [
-        'a) 3',
-        'b) 0',
-        'c) 2',
-        'd) 1'
-      ],
+    question: 'What does Parker (Alec Baldwin) call the Long Island Expressway?',
+    possibleAnswers: [
+      'a) A Concrete Miracle',
+      'b) A Concrete Jungle',
+      'c) The Great Expressway',
+      'd) A Winding Miracle'
+    ],
     flags: [true, false, false, false],
-    answer: 'a) 3'
+    answer: 'a) A Concrete Miracle'
   }
 
   var q10 = {
-    question: 'Which of the following actors DID NOT guest star on Friends?',
-    possibleAnswers:
-      [
-        'a) George Clooney',
-        'b) Brooke Shields',
-        'c) Billy Crystal',
-        'd) Nicole Kidman'
-      ],
-    flags: [false, false, false, true],
-    answer: 'd) Nicole Kidman'
+    question: "Complete this sentence, 'Gum would be...'",
+    possibleAnswers: [
+      'a) Awesome',
+      'b) Great',
+      'c) Perfection',
+      'd) Perfect'
+    ],
+    flags: [false, false, true, false],
+    answer: 'c) Perfection'
   }
 
-  var arrayQuestions = [q1, q2, q3, q4, q5, q6, q7, q8, q9, q10]
+  var q11 = {
+    question: 'What did Joey read to Emma on her 1st birthday?'
+    possibleAnswers: [
+      'a) Love You Forever by Robert Munsch',
+      'b) The Velvateen Rabit by Margery Williams',
+      'c) The Very Hungary Caterpillar by Eric Carle',
+      'd) Where the Wild Things Are by Maurice Sendak'
+    ],
+    flags: [true, false, false, false],
+    answer: 'a) Love You Forever by Robert Munsch'
+  }
+
+  var q12 = {
+    question: "What is Joey's Cabbage Patch Kid Doll named?",
+    possibleAnswers: [
+      'a) Alicia-May Emory',
+      'b) Cassidy-May Emory',
+      'c) Hugsie',
+      'd) Original Hugsie'
+    ],
+    flags: [true, false, false, false],
+    answer: 'a) Alicia-May Emory'
+  }
+
+  var q13 = {
+    question: 'Who is Chandler stuck in an ATM vestibule with?',
+    possibleAnswers: [
+      'a) Jill Goodacre',
+      'b) Elle McPhearson',
+      'c) Yasmine Bleeth',
+      'd) Christie Brinkley'
+    ],
+    flags: [true, false, false, false],
+    answer: 'a) Jill Goodacre'
+  }
+
+  var q14 = {
+    question: "What did Rachel sing at Barry and Mindy's wedding?",
+    possibleAnswers: [
+      'a) Sweet Caroline',
+      'b) The Copacabana',
+      'c) Brown Eyed Girl',
+      'd) Afternoon Delight'
+    ],
+    flags: [false, true, false, false],
+    answer: 'b) The Copacabana'
+  }
+
+  var q15 = {
+    question: "What song does Monica sing at Mike's piano bar?",
+    possibleAnswers: [
+      'a) We Are the Champions',
+      'b) Joy to the World',
+      'c) Delta Dawn',
+      'd) Sweet Caroline'
+    ],
+    flags: [false, false, true, false],
+    answer: 'c) Delta Dawn'
+  }
+
+  var arrayQuestions = [q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12, q13, q14, q15]
 
   function questionAppearsOnPage (answerSelection) {
     console.log(answerSelection)
-    $('.question').html("<h3>" + arrayQuestions[answerSelection].question + "</h3")
+    // $('.question').html("<h3>" + arrayQuestions[answerSelection].question + "</h3")
+    $('.question').html('<h3>' + arrayQuestions[answerSelection].question + '</h3>')
     $('#buttonA').text(arrayQuestions[answerSelection].possibleAnswers[0]).show()
     $('#buttonB').text(arrayQuestions[answerSelection].possibleAnswers[1]).show()
     $('#buttonC').text(arrayQuestions[answerSelection].possibleAnswers[2]).show()
@@ -145,7 +187,7 @@ $(document).ready(function() {
   function gameStart () {
     index = 0
     // $('.question').append('<button id="start-button"><img src="friends-group-photo.jpg">Start Game</button>')
-    $('.question').append('<button id="hard-start">Hard</button>')
+    $('.question').append('<button class="level-button" id="hard-start">Hard</button>')
     $('#hard-start').on('click', function () {
       $(this).hide()
       questionAppearsOnPage(index)
@@ -153,7 +195,7 @@ $(document).ready(function() {
   }
 
   function getAnswer () {
-    $('answerChoice').on('click', function () {
+    $('.answerChoice').on('click', function () {
       $('.question').text('')
       $('#buttonA').text('')
       $('#buttonB').text('')
@@ -164,7 +206,7 @@ $(document).ready(function() {
   }
 
   gameStart()
-  $('answerChoice').on('click', function () {
+  $('.answerChoice').on('click', function () {
     if(this.id === 'buttonA') {
       var answerChosen = 'a'
     } else if (this.id === 'buttonB') {
