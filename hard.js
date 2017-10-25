@@ -113,7 +113,7 @@ $(document).ready(function() {
   }
 
   var q11 = {
-    question: 'What did Joey read to Emma on her 1st birthday?'
+    question: 'What did Joey read to Emma on her 1st birthday?',
     possibleAnswers: [
       'a) Love You Forever by Robert Munsch',
       'b) The Velvateen Rabit by Margery Williams',

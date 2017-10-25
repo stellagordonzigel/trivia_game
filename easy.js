@@ -133,7 +133,7 @@ $(document).ready(function() {
     answer: 'a) Smelly Cat'
   }
 
-  var q13 = {
+  var q14 = {
     question: 'Who does Monica marry?',
     possibleAnswers: [
       'a) Richard',
@@ -145,7 +145,7 @@ $(document).ready(function() {
     answer: 'c) Chandler'
   }
 
-  var q14 = {
+  var q15 = {
     question: "Who was involved in the 'We Were On a Break' fight?",
     possibleAnswers: [
       'a) Monica and Chandler',
@@ -157,17 +157,17 @@ $(document).ready(function() {
     answer: 'd) Ross and Rachel'
   }
 
-  var q15 = {
-    question: 'Who does Joey play on Days of Our Lives?',
-    possibleAnswers: [
-      'a) Dr. Striker Ramore',
-      'b) Dr. Drake Ramore',
-      'c) Dr. Hans Ramore',
-      'd) Dr. Anthony Ramore'
-    ],
-    flags: [false, true, false, false],
-    answer: 'b) Dr. Drake Ramore'
-  }
+  // var q16 = {
+  //   question: 'Who does Joey play on Days of Our Lives?',
+  //   possibleAnswers: [
+  //     'a) Dr. Striker Ramore',
+  //     'b) Dr. Drake Ramore',
+  //     'c) Dr. Hans Ramore',
+  //     'd) Dr. Anthony Ramore'
+  //   ],
+  //   flags: [false, true, false, false],
+  //   answer: 'b) Dr. Drake Ramore'
+  // }
 
   var arrayQuestions = [q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12, q13, q14, q15]
 
@@ -202,8 +202,8 @@ $(document).ready(function() {
   function gameStart() {
     index = 0
     // $('.question').append('<button id="start-button"><img src="friends-group-photo.jpg">Start Game</button>')
-    $('.question').append('<button class="level-button" id="easy-button">Easy</button>')
-    $('#easy-button').on('click', function() {
+    $('.question').append('<button class="level-button" id="easy-start">Easy</button>')
+    $('#easy-start').on('click', function() {
       $(this).hide()
       questionAppearsOnPage(index)
     })

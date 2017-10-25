@@ -27,7 +27,8 @@ $(document).ready(function() {
       'a) America Runs on Dunkin',
       'b) Got Milk?',
       "c) It's so easy a caveman could do it",
-      'd) Just Do It'],
+      'd) Just Do It'
+    ],
     flags: [false, true, false, false],
     answer: 'b) Got Milk?'
   }
@@ -126,7 +127,7 @@ $(document).ready(function() {
   var q12 = {
     question: 'What game show does Joey appear on?',
     possibleAnswers: [
-      'a) Win, Lose, or Draw',
+      'a) Win, Lose, or Draw', //do commas matter?
       'b) Match Game',
       'c) Bamboozled',
       'd) Pyramid'
@@ -143,7 +144,7 @@ $(document).ready(function() {
   }
 
   var q14 = {
-    question: "What is the name of Chandler's father's all-male burlesque?"
+    question: "What is the name of Chandler's father's all-male burlesque?",
     possibleAnswers: [
       "a) It's Raining Men",
       'b) The Village People',
@@ -155,7 +156,7 @@ $(document).ready(function() {
   }
 
   var q15 = {
-    question: 'What is the name of the Gellar family newsletter?'
+    question: 'What is the name of the Gellar family newsletter?',
     possibleAnswers: [
       'a) The Geller Yeller',
       'b) The Geller Times',
