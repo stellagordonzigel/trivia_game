@@ -1,6 +1,19 @@
 $(document).ready(function() {
-  // let correct = 0
-  // let wrong = 0
+
+  function startTimer() {
+    var sec = 3
+    $('.timer').text(sec)
+
+    var timer = setInterval(function() {
+      sec--
+      $('.timer').text(sec)
+      if (sec === -1) {
+        $('.timer').fadeOut('fast')
+        clearInterval(timer)
+        alert('game over')
+      }
+    }, 1000);
+  }
 
   var q1 = {
     question: 'What soap opera did Joey star in?',
@@ -199,12 +212,24 @@ $(document).ready(function() {
       .show()
   }
 
+  function correctAnswer() {
+    index++
+    alert('correct')
+    console.log('correct')
+  }
+
+  function wrongAnswer() {
+    index++
+    alert('wrong')
+    console.log('wrong')
+  }
+
   function gameStart() {
     index = 0
-    // $('.question').append('<button id="start-button"><img src="friends-group-photo.jpg">Start Game</button>')
     $('.question').append('<button class="level-button" id="easy-start">Easy</button>')
     $('#easy-start').on('click', function() {
       $(this).hide()
+      startTimer()
       questionAppearsOnPage(index)
     })
   }
