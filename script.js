@@ -8,7 +8,8 @@ $(document).ready(function() {
   $('.answerChoice').hide()
 
   function startTimer() {
-    var sec = 60000
+    var sec = 60
+    $('.timer').show()
     $('.timer').text(sec)
 
     timer = setInterval(function() {
@@ -18,20 +19,16 @@ $(document).ready(function() {
         $('.timer').fadeOut('fast')
         stopTimer()
         alert('game over, you got ' + score + '/15')
-        // $('.show-score').text(score + '/15')
       }
-      // if ((sec === -1) || (questionSet = 0)) {
-      //   $('.show-score').text(score + '/15')
-      // }
     }, 1000);
   }
 
   function stopTimer() {
     clearInterval(timer)
+    $('.timer').hide()
   }
 
   function questionsAppearOnPage(answerSelection) {
-    // console.log(answerSelection)
     $('.question').html(
       '<h3>' + questionSet[answerSelection].question + '</h3>'
     )
@@ -51,7 +48,6 @@ $(document).ready(function() {
 
   function correctAnswer() {
     index
-    // $('.correct').text('correct')
     alert('correct')
     console.log(score)
   }
@@ -63,7 +59,6 @@ $(document).ready(function() {
   }
 
   function gameStart() {
-    // index = 0
     $('.question').append('<button class="level-button" id="easy-start">Easy</button>')
     $('.question').append('<button class="level-button" id="medium-start">Medium</button>')
     $('.question').append('<button class="level-button" id="hard-start">Hard</button>')
@@ -94,14 +89,11 @@ $(document).ready(function() {
       $('#buttonB').text('')
       $('#buttonC').text('')
       $('#buttonD').text('')
-
-      easyQuestionsAppearOnPage()
-      mediumQuestionsAppearOnPage()
-      hardQuestionsAppearOnPage()
     })
   }
 
   gameStart()
+
   $('.answerChoice').on('click', function() {
     if (this.id === 'buttonA') {
       var answerChosen = 'a'
@@ -148,11 +140,17 @@ $(document).ready(function() {
     $('#buttonD').text('')
     index++
 
+    function declareWinner() {
+      index = 0
+      score = 0
+      gameStart()
+    }
+
     if (index < questionSet.length) {
       questionsAppearOnPage(index)
     } else {
       stopTimer()
-      alert("you won!")
+      alert('game over, you got ' + score + '/15')
       $('.answerChoice').hide()
       declareWinner()
     }
