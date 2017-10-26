@@ -1,24 +1,37 @@
 $(document).ready(function() {
 
   var questionSet = null
+  var index = 0
+  var score = 0
+  var timer
+
+  $('.answerChoice').hide()
 
   function startTimer() {
-    var sec = 60
+    var sec = 60000
     $('.timer').text(sec)
 
-    var timer = setInterval(function() {
+    timer = setInterval(function() {
       sec--
       $('.timer').text(sec)
       if (sec === -1) {
         $('.timer').fadeOut('fast')
-        clearInterval(timer)
-        alert('game over')
+        stopTimer()
+        alert('game over, you got ' + score + '/15')
+        // $('.show-score').text(score + '/15')
       }
+      // if ((sec === -1) || (questionSet = 0)) {
+      //   $('.show-score').text(score + '/15')
+      // }
     }, 1000);
   }
 
+  function stopTimer() {
+    clearInterval(timer)
+  }
+
   function questionsAppearOnPage(answerSelection) {
-    console.log(answerSelection)
+    // console.log(answerSelection)
     $('.question').html(
       '<h3>' + questionSet[answerSelection].question + '</h3>'
     )
@@ -38,8 +51,9 @@ $(document).ready(function() {
 
   function correctAnswer() {
     index
+    // $('.correct').text('correct')
     alert('correct')
-    console.log('correct')
+    console.log(score)
   }
 
   function wrongAnswer() {
@@ -49,12 +63,13 @@ $(document).ready(function() {
   }
 
   function gameStart() {
-    index = 0
+    // index = 0
     $('.question').append('<button class="level-button" id="easy-start">Easy</button>')
     $('.question').append('<button class="level-button" id="medium-start">Medium</button>')
     $('.question').append('<button class="level-button" id="hard-start">Hard</button>')
 
     $('.level-button').on('click', function () {
+
       let level = $(this).attr('id')
       if (level === 'easy-start') {
         questionSet = easyQuestions
@@ -100,24 +115,28 @@ $(document).ready(function() {
 
     if (answerChosen === 'a' && questionSet[index].flags[0] === true) {
       correctAnswer()
+      score++
     } else if (answerChosen === 'a') {
       wrongAnswer()
     }
 
     if (answerChosen === 'b' && questionSet[index].flags[1] === true) {
       correctAnswer()
+      score++
     } else if (answerChosen === 'b') {
       wrongAnswer()
     }
 
     if (answerChosen === 'c' && questionSet[index].flags[2] === true) {
       correctAnswer()
+      score++
     } else if (answerChosen === 'c') {
       wrongAnswer()
     }
 
     if (answerChosen === 'd' && questionSet[index].flags[3] === true) {
       correctAnswer()
+      score++
     } else if (answerChosen === 'd') {
       wrongAnswer()
     }
@@ -132,7 +151,10 @@ $(document).ready(function() {
     if (index < questionSet.length) {
       questionsAppearOnPage(index)
     } else {
+      stopTimer()
+      alert("you won!")
       $('.answerChoice').hide()
+      declareWinner()
     }
   })
 })
