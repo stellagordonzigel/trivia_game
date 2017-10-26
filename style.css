@@ -12,7 +12,7 @@ img {
   padding-top: 30px;
 }
 
-h1 {
+h1, .timer {
   text-align: center;
 }
 
@@ -32,13 +32,16 @@ h1 {
   flex-direction: row;
 }
 
-/*.answerChoice { if i use image as button, .answerChoice will have its own style*/
-.answerChoice, #easy-button, #medium-start, #hard-start {
+.answerChoice, #easy-start, #medium-start, #hard-start {
   width: 200px;
   height: 200px;
   border-radius: 50%;
   border: none;
   margin-top: 50px;
+}
+
+.answerChoice {
+  font-size: 16px;
 }
 
 .question {
@@ -50,25 +53,21 @@ h1 {
 
 .level-button {
   margin: 0 10px;
+  font-family: friends;
+  font-size: 24px;
 }
 
-
-/*if i use image as button -- come back
-#start-button {
-  border: none;
-  background-color: inherit;
-  color: white;
-  margin: auto;
-}*/
-
-#buttonA, #buttonD, #easy-button {
+#buttonA, #buttonD, #easy-start {
   background-color: rgba(234, 24, 29, .5);
+  outline: none;
 }
 
 #buttonB, #medium-start {
   background: rgba(1, 179, 232, .5);
+  outline: none;
 }
 
 #buttonC, #hard-start {
   background: rgba(251, 189, 14, .5);
+  outline: none;
 }
