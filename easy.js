@@ -1,7 +1,6 @@
-$(document).ready(function() {
 
-  var easyQuestions =
-   { //q1
+var easyQuestions = [
+  { //q1
     question: 'What soap opera did Joey star in?',
     possibleAnswers: [
       'a) Days of Our Lives',
@@ -11,21 +10,21 @@ $(document).ready(function() {
     ],
     flags: [true, false, false, false],
     answer: 'a) Days of Our Lives'
-  }
+  },
 
   { //q2
     question: 'Whose name did Ross say at the altar?',
     possibleAnswers: ['a) Emily', 'b) Phoebe', 'c) Rachel', 'd) Susan'],
     flags: [false, false, true, false],
     answer: 'c) Rachel'
-  }
+  },
 
   { //q3
     question: "What is the name of Central Perk's barista?",
     possibleAnswers: ['a) Adam', 'b) Paolo', 'c) Mark', 'd) Gunther'],
     flags: [false, false, false, true],
     answer: 'd) Gunther'
-  }
+  },
 
   { //q4
     question: "What is Joey's signature pick-up-line?",
@@ -37,7 +36,7 @@ $(document).ready(function() {
     ],
     flags: [false, false, false, true],
     answer: "d) How you doin'?"
-  }
+  },
 
   { //q5
     question: "What is Ross' profession?",
@@ -49,7 +48,7 @@ $(document).ready(function() {
     ],
     flags: [true, false, false, false],
     answer: 'a) Paleontologist'
-  }
+  },
 
   { //q6
     question: 'Where does the show take place?',
@@ -61,28 +60,28 @@ $(document).ready(function() {
     ],
     flags: [true, false, false, false],
     answer: 'a) New York City'
-  }
+  },
 
   { //q7
     question: 'How many seasons of Friends are there?',
     possibleAnswers: ['a) 8', 'b) 7', 'c) 9', 'd) 10'],
     flags: [false, false, false, true],
     answer: 'd) 10'
-  }
+  },
 
   { //q8
     question: 'How many Friends are there?',
     possibleAnswers: ['a) 6', 'b) 7', 'c) 5', 'd) 4'],
     flags: [true, false, false, false],
     answer: 'a) 6'
-  }
+  },
 
   { //q9
     question: 'How many times has Ross been married?',
     possibleAnswers: ['a) 3', 'b) 0', 'c) 2', 'd) 1'],
     flags: [true, false, false, false],
     answer: 'a) 3'
-  }
+  },
 
   { //q10
     question: 'What actress plays Rachel?',
@@ -94,7 +93,7 @@ $(document).ready(function() {
     ],
     flags: [false, true, false, false],
     answer: 'b) Jennifer Aniston'
-  }
+  },
 
   { //q11
     question: 'Where do the Friends always hang out?',
@@ -106,7 +105,7 @@ $(document).ready(function() {
     ],
     flags: [false, true, false, false],
     answer: 'b) Central Perk'
-  }
+  },
 
   { //q12
     question: "What is Chandler's last name?",
@@ -118,7 +117,7 @@ $(document).ready(function() {
     ],
     flags: [false, false, true, false],
     answer: 'c) Bing'
-  }
+  },
 
   { //q13
     question: "What is Phoebe's signature song?",
@@ -130,7 +129,7 @@ $(document).ready(function() {
     ],
     flags: [true, false, false, false],
     answer: 'a) Smelly Cat'
-  }
+  },
 
   { //q14
     question: 'Who does Monica marry?',
@@ -142,7 +141,7 @@ $(document).ready(function() {
     ],
     flags: [false, false, true, false],
     answer: 'c) Chandler'
-  }
+  },
 
   { //q15
     question: "Who was involved in the 'We Were On a Break' fight?",
@@ -155,6 +154,7 @@ $(document).ready(function() {
     flags: [false, false, false, true],
     answer: 'd) Ross and Rachel'
   }
+]
 
   // { q16
   //   question: 'Who does Joey play on Days of Our Lives?',
@@ -167,6 +167,3 @@ $(document).ready(function() {
   //   flags: [false, true, false, false],
   //   answer: 'b) Dr. Drake Ramore'
   // }
-
-  var arrayQuestions = [q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12, q13, q14, q15]
-})

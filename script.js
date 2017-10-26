@@ -1,7 +1,9 @@
 $(document).ready(function() {
 
+  var questionSet = null
+
   function startTimer() {
-    var sec = 20
+    var sec = 60
     $('.timer').text(sec)
 
     var timer = setInterval(function() {
@@ -15,24 +17,22 @@ $(document).ready(function() {
     }, 1000);
   }
 
-  var arrayQuestions = [q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12, q13, q14, q15]
-
-  function questionAppearsOnPage(answerSelection) {
+  function questionsAppearOnPage(answerSelection) {
     console.log(answerSelection)
     $('.question').html(
-      '<h3>' + arrayQuestions[answerSelection].question + '</h3>'
+      '<h3>' + questionSet[answerSelection].question + '</h3>'
     )
     $('#buttonA')
-      .text(arrayQuestions[answerSelection].possibleAnswers[0])
+      .text(questionSet[answerSelection].possibleAnswers[0])
       .show()
     $('#buttonB')
-      .text(arrayQuestions[answerSelection].possibleAnswers[1])
+      .text(questionSet[answerSelection].possibleAnswers[1])
       .show()
     $('#buttonC')
-      .text(arrayQuestions[answerSelection].possibleAnswers[2])
+      .text(questionSet[answerSelection].possibleAnswers[2])
       .show()
     $('#buttonD')
-      .text(arrayQuestions[answerSelection].possibleAnswers[3])
+      .text(questionSet[answerSelection].possibleAnswers[3])
       .show()
   }
 
@@ -51,10 +51,24 @@ $(document).ready(function() {
   function gameStart() {
     index = 0
     $('.question').append('<button class="level-button" id="easy-start">Easy</button>')
-    $('#easy-start').on('click', function() {
-      $(this).hide()
-      startTimer()
-      questionAppearsOnPage(index)
+    $('.question').append('<button class="level-button" id="medium-start">Medium</button>')
+    $('.question').append('<button class="level-button" id="hard-start">Hard</button>')
+
+    $('.level-button').on('click', function () {
+      let level = $(this).attr('id')
+      if (level === 'easy-start') {
+        questionSet = easyQuestions
+        questionsAppearOnPage(index)
+        startTimer()
+      } else if (level === 'medium-start') {
+        questionSet = mediumQuestions
+        questionsAppearOnPage(index)
+        startTimer()
+      } else if (level === 'hard-start') {
+        questionSet = hardQuestions
+        questionsAppearOnPage(index)
+        startTimer()
+      }
     })
   }
 
@@ -65,7 +79,10 @@ $(document).ready(function() {
       $('#buttonB').text('')
       $('#buttonC').text('')
       $('#buttonD').text('')
-      questionAppearsOnPage()
+
+      easyQuestionsAppearOnPage()
+      mediumQuestionsAppearOnPage()
+      hardQuestionsAppearOnPage()
     })
   }
 
@@ -81,25 +98,25 @@ $(document).ready(function() {
       answerChosen = 'd'
     }
 
-    if (answerChosen === 'a' && arrayQuestions[index].flags[0] === true) {
+    if (answerChosen === 'a' && questionSet[index].flags[0] === true) {
       correctAnswer()
     } else if (answerChosen === 'a') {
       wrongAnswer()
     }
 
-    if (answerChosen === 'b' && arrayQuestions[index].flags[1] === true) {
+    if (answerChosen === 'b' && questionSet[index].flags[1] === true) {
       correctAnswer()
     } else if (answerChosen === 'b') {
       wrongAnswer()
     }
 
-    if (answerChosen === 'c' && arrayQuestions[index].flags[2] === true) {
+    if (answerChosen === 'c' && questionSet[index].flags[2] === true) {
       correctAnswer()
     } else if (answerChosen === 'c') {
       wrongAnswer()
     }
 
-    if (answerChosen === 'd' && arrayQuestions[index].flags[3] === true) {
+    if (answerChosen === 'd' && questionSet[index].flags[3] === true) {
       correctAnswer()
     } else if (answerChosen === 'd') {
       wrongAnswer()
@@ -112,8 +129,8 @@ $(document).ready(function() {
     $('#buttonD').text('')
     index++
 
-    if (index < arrayQuestions.length) {
-      questionAppearsOnPage(index)
+    if (index < questionSet.length) {
+      questionsAppearOnPage(index)
     } else {
       $('.answerChoice').hide()
     }
