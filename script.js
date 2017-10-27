@@ -8,7 +8,7 @@ $(document).ready(function() {
   $('.answerChoice').hide()
 
   function startTimer() {
-    var sec = 60
+    var sec = 5
     $('.timer').show()
     $('.timer').text(sec)
 
@@ -18,7 +18,8 @@ $(document).ready(function() {
       if (sec === -1) {
         $('.timer').fadeOut('fast')
         stopTimer()
-        alert('game over, you got ' + score + '/15')
+        // alert('Game over, you got ' + score + '/15!')
+        clearCurrentGame()
       }
     }, 1000);
   }
@@ -28,44 +29,47 @@ $(document).ready(function() {
     $('.timer').hide()
   }
 
-  function questionsAppearOnPage(answerSelection) {
+  function questionsAppearOnPage(qAndA) {
     $('.question').html(
-      '<h3>' + questionSet[answerSelection].question + '</h3>'
+      '<h3>' + questionSet[qAndA].question + '</h3>'
     )
     $('#buttonA')
-      .text(questionSet[answerSelection].possibleAnswers[0])
+      .text(questionSet[qAndA].possibleAnswers[0])
       .show()
     $('#buttonB')
-      .text(questionSet[answerSelection].possibleAnswers[1])
+      .text(questionSet[qAndA].possibleAnswers[1])
       .show()
     $('#buttonC')
-      .text(questionSet[answerSelection].possibleAnswers[2])
+      .text(questionSet[qAndA].possibleAnswers[2])
       .show()
     $('#buttonD')
-      .text(questionSet[answerSelection].possibleAnswers[3])
+      .text(questionSet[qAndA].possibleAnswers[3])
       .show()
   }
 
   function correctAnswer() {
     index
-    alert('correct')
+    score++
+    // alert('correct')
     console.log(score)
   }
 
   function wrongAnswer() {
     index
-    alert('wrong')
+    // alert('wrong')
     console.log('wrong')
   }
 
   function gameStart() {
+    // $('.question').show()
+
     $('.question').append('<button class="level-button" id="easy-start">Easy</button>')
     $('.question').append('<button class="level-button" id="medium-start">Medium</button>')
     $('.question').append('<button class="level-button" id="hard-start">Hard</button>')
 
     $('.level-button').on('click', function () {
 
-      let level = $(this).attr('id')
+      var level = $(this).attr('id')
       if (level === 'easy-start') {
         questionSet = easyQuestions
         questionsAppearOnPage(index)
@@ -92,44 +96,56 @@ $(document).ready(function() {
     })
   }
 
+  function setUpNewGame() {
+    index = 0
+    score = 0
+    $('.answerChoice').hide()
+    gameStart()
+  }
+
+  function clearCurrentGame() {
+    alert('Game over, you got ' + score + '/15!')
+    $('.question').empty()
+    $('.answerChoice').hide()
+    index = 0
+    score = 0
+    gameStart()
+  }
+
   gameStart()
 
   $('.answerChoice').on('click', function() {
     if (this.id === 'buttonA') {
-      var answerChosen = 'a'
+      var answerSelected = 'a'
     } else if (this.id === 'buttonB') {
-      answerChosen = 'b'
+      answerSelected = 'b'
     } else if (this.id === 'buttonC') {
-      answerChosen = 'c'
+      answerSelected = 'c'
     } else if (this.id === 'buttonD') {
-      answerChosen = 'd'
+      answerSelected = 'd'
     }
 
-    if (answerChosen === 'a' && questionSet[index].flags[0] === true) {
+    if (answerSelected === 'a' && questionSet[index].flags[0] === true) {
       correctAnswer()
-      score++
-    } else if (answerChosen === 'a') {
+    } else if (answerSelected === 'a') {
       wrongAnswer()
     }
 
-    if (answerChosen === 'b' && questionSet[index].flags[1] === true) {
+    if (answerSelected === 'b' && questionSet[index].flags[1] === true) {
       correctAnswer()
-      score++
-    } else if (answerChosen === 'b') {
+    } else if (answerSelected === 'b') {
       wrongAnswer()
     }
 
-    if (answerChosen === 'c' && questionSet[index].flags[2] === true) {
+    if (answerSelected === 'c' && questionSet[index].flags[2] === true) {
       correctAnswer()
-      score++
-    } else if (answerChosen === 'c') {
+    } else if (answerSelected === 'c') {
       wrongAnswer()
     }
 
-    if (answerChosen === 'd' && questionSet[index].flags[3] === true) {
+    if (answerSelected === 'd' && questionSet[index].flags[3] === true) {
       correctAnswer()
-      score++
-    } else if (answerChosen === 'd') {
+    } else if (answerSelected === 'd') {
       wrongAnswer()
     }
 
@@ -140,19 +156,12 @@ $(document).ready(function() {
     $('#buttonD').text('')
     index++
 
-    function declareWinner() {
-      index = 0
-      score = 0
-      gameStart()
-    }
-
     if (index < questionSet.length) {
       questionsAppearOnPage(index)
     } else {
       stopTimer()
-      alert('game over, you got ' + score + '/15')
-      $('.answerChoice').hide()
-      declareWinner()
+      alert('Game over, you got ' + score + '/15!')
+      setUpNewGame()
     }
   })
 })
