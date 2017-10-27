@@ -14,6 +14,7 @@
 ## Technologies Used:
 * HTML
 * CSS
+* JavaScript
 * jQuery
 
 ## Installation Instructions:

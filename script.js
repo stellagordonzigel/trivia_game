@@ -60,8 +60,6 @@ $(document).ready(function() {
   }
 
   function gameStart() {
-    // $('.question').show()
-
     $('.question').append('<button class="level-button" id="easy-start">Easy</button>')
     $('.question').append('<button class="level-button" id="medium-start">Medium</button>')
     $('.question').append('<button class="level-button" id="hard-start">Hard</button>')
