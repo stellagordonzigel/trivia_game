@@ -1,19 +1,8 @@
 # trivia_game
 
-## Technologies Used:
-* HTML
-* CSS
-* jQuery
-
 ## Description:
 * This trivia game tests the users' knowledge of Friends in 60 seconds. Choose from the easy, medium and hard decks, or play all three!
-* Play Friends Trivia [here] (https://stellagordonzigel.github.io/trivia_game/)
-
-
-## Installation Instructions:
-* Fork this repository (trivia_game)
-* Clone it to your local repository
-* Open index.html, style.css, script.js, easy.js, medium.js, hard.js, friends_logo.png, and FRIENDS_.TTF in a text editor of your choice
+* Play Friends Trivia [here](https://stellagordonzigel.github.io/trivia_game/)
 
 ## User Stories
 * When I load the page, easy, medium and hard level buttons should be displayed
@@ -22,10 +11,20 @@
 * If I answer every question, or the timer runs out (whichever comes first), my score should pop up
 * When I click 'ok' the easy, medium and hard level buttons should re-appear and I can select the level I'd like to play
 
+## Technologies Used:
+* HTML
+* CSS
+* jQuery
+
+## Installation Instructions:
+* Fork this repository (trivia_game)
+* Clone it to your local repository
+* Open index.html, style.css, script.js, easy.js, medium.js, hard.js, friends_logo.png, and FRIENDS_.TTF in a text editor of your choice
+
 ## Unsolved Problems:
 * I wanted to give the user an indication of whether or not their answers were correct as they were making a selection. Initially, I used alerts for this, but felt the user experience was negatively impacted by having to click ‘ok’ on the alert to move on to the next question. I wanted something to pop up and quickly disappear so the experience was not impacted.
 * In addition to the timer and final score, I wanted to show the user which question they were on out of the total number of questions. (example: 7/15)
 
 ## Contribute
-* Source Code: (https://github.com/stellagordonzigel/trivia_game)
-* Issue Tracker: (https://github.com/stellagordonzigel/trivia_game/issues)
+* Source Code: https://github.com/stellagordonzigel/trivia_game
+* Issue Tracker: https://github.com/stellagordonzigel/trivia_game/issues
