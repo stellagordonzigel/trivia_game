@@ -8,7 +8,7 @@ $(document).ready(function() {
   $('.answerChoice').hide()
 
   function startTimer() {
-    var sec = 5
+    var sec = 60
     $('.timer').show()
     $('.timer').text(sec)
 
@@ -18,7 +18,6 @@ $(document).ready(function() {
       if (sec === -1) {
         $('.timer').fadeOut('fast')
         stopTimer()
-        // alert('Game over, you got ' + score + '/15!')
         clearCurrentGame()
       }
     }, 1000);
