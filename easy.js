@@ -167,3 +167,5 @@ var easyQuestions = [
   //   flags: [false, true, false, false],
   //   answer: 'b) Dr. Drake Ramore'
   // }
+  // Commented out code should not be in production branch
+  // Really well organized data for the questions.  Good use of objects and arrays.  I'm learning so much about Friends!

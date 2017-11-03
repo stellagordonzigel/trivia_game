@@ -1,3 +1,4 @@
+/* Friends font source: https://www.ffonts.net/Friends.font.download */
 @font-face {
   font-family: friends;
   src: url(FRIENDS_.TTF);
@@ -39,6 +40,7 @@ h1, .timer {
   border: none;
   margin-top: 50px;
 }
+/*This is a little confusing how you have `answerChoice` twice and once with all the difficulty ids.  What I would do is give both the elements with `answerChoice` and `level-button` an additional common class like `round-button` and put the styling common to both of those classes in there.  Then style `answerChoice` and `level-button` as needed.   */
 
 .answerChoice {
   font-size: 16px;
@@ -46,6 +48,7 @@ h1, .timer {
 
 .question {
   font-family: Arial, sans-serif;
+  /* Check out https://fonts.google.com/ for even more font options!*/
   text-align: center;
   display: flex;
   justify-content: center;
@@ -71,3 +74,6 @@ h1, .timer {
   background: rgba(251, 189, 14, .5);
   outline: none;
 }
+
+/* Nice job on the color palatte.  Good use of flex.  Page scales well to a point.  Try to account for small screens next.  Check out media queries -- You could turn on `flex-wrap` for the buttons when your screen gets small enough for example */
+/* Good job getting more specific as you scroll through the CSS (elements first, then classes, then ids)!*/
