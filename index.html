@@ -6,20 +6,23 @@
     <link rel="stylesheet" type"text/css" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
     <script src="script.js"></script>
+    <!-- Doesn't really matter because you have document.ready on your script file, but I'd still put the script file at the bottom of the `head`.  -->
     <script src="easy.js"></script>
     <script src="medium.js"></script>
     <script src="hard.js"></script>
   </head>
   <body>
-    <!-- logo: https://commons.wikimedia.org/wiki/File:Friends_logo.svg -->
+    <!-- Friends logo source: https://commons.wikimedia.org/wiki/File:Friends_logo.svg -->
     <img class="center fit" src="friends_logo.png" alt="Friends Logo">
-    <!-- https://www.ffonts.net/Friends.font.download -->
     <h1>The One With All the Trivia</h1>
     <div class="timer"></div>
     <div class="question"></div>
+    <!-- Might make more sense to have the timer as a `<p>` tag, or `<p>` tag inside of a `<div>` -->
     <div class="answers button-container">
       <div>
         <button class="answerChoice" id="buttonA"><p>a)</p></button>
+        <!-- html/css class names should be kabob-case -->
+        <!-- answerChoice => answer-choice -->
       </div>
       <div>
         <button class="answerChoice" id="buttonB"><p>b)</p></button>
@@ -33,3 +36,5 @@
     </div>
   </body>
 </html>
+
+<!-- Well formatted code.  class names are intuitive and your code is very clean.  Maybe the button ids could have been labeled 'answer-a', 'answer-b', etc... Also, the img classes should maybe be something more along the lines of `logo`.  classes should describe what it is, not what it does. Solid HTML -->
