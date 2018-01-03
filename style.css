@@ -16,6 +16,10 @@ h1, .timer {
   text-align: center;
 }
 
+.checkMark, .xMark {
+  text-align: center;
+}
+
 .fit {
   max-width: 75%;
   max-height: 75%;
@@ -30,6 +34,7 @@ h1, .timer {
   display: flex;
   justify-content: space-around;
   flex-direction: row;
+  /*//flex-position (?) : absolute -- look up*/
 }
 
 .answerChoice, #easy-start, #medium-start, #hard-start {

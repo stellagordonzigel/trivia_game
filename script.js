@@ -5,7 +5,13 @@ $(document).ready(function() {
   var score = 0
   var timer
 
+  $('.checkMark').hide()
+  $('.xMark').hide()
+
+  // hiding four answer choice buttons when game starts, before level-button is clicked
   $('.answerChoice').hide()
+
+  gameStart()
 
   function startTimer() {
     var sec = 60
@@ -28,10 +34,13 @@ $(document).ready(function() {
     $('.timer').hide()
   }
 
+  //questions and possibleAnswers are appearing on the page
   function questionsAppearOnPage(qAndA) {
+    //adding the question to the question div
     $('.question').html(
       '<h3>' + questionSet[qAndA].question + '</h3>'
     )
+    //adding possibleAnswers to each button (A, B, C, D)
     $('#buttonA')
       .text(questionSet[qAndA].possibleAnswers[0])
       .show()
@@ -49,32 +58,43 @@ $(document).ready(function() {
   function correctAnswer() {
     index
     score++
+    $('.checkMark').show().delay(200).fadeOut()
+    // setTimeout(function(){
+    //
+    // }, 500)
     // alert('correct')
     console.log(score)
   }
 
   function wrongAnswer() {
     index
+    $('.xMark').show().delay(200).fadeOut()
     // alert('wrong')
     console.log('wrong')
   }
 
   function gameStart() {
+    //easy, medium, and hard buttons are appended into the question div
     $('.question').append('<button class="level-button" id="easy-start">Easy</button>')
     $('.question').append('<button class="level-button" id="medium-start">Medium</button>')
     $('.question').append('<button class="level-button" id="hard-start">Hard</button>')
 
+    //click event: when easy, medium, or hard button is clicked
     $('.level-button').on('click', function () {
 
+      //level = the level button's id (easy-start, medium-start, hard-start)
       var level = $(this).attr('id')
+      //if level = easy-start, questionSet = easyQuestions(see easy.js)
       if (level === 'easy-start') {
         questionSet = easyQuestions
         questionsAppearOnPage(index)
         startTimer()
+      //if level = medium-start, questionSet = mediumQuestions(see medium.js)
       } else if (level === 'medium-start') {
         questionSet = mediumQuestions
         questionsAppearOnPage(index)
         startTimer()
+      //if level = hard-start, questionSet = hardQuestions(see hard.js)
       } else if (level === 'hard-start') {
         questionSet = hardQuestions
         questionsAppearOnPage(index)
@@ -84,13 +104,19 @@ $(document).ready(function() {
   }
 
   function showAnswer() {
+    //when an answer choice (a, b, c, d buttons) is clicked
     $('.answerChoice').on('click', function() {
-      $('.question').text('')
-      $('#buttonA').text('')
-      $('#buttonB').text('')
-      $('#buttonC').text('')
-      $('#buttonD').text('')
+      answersAppear()
     })
+  }
+
+  function answersAppear() {
+    $('.question').text('')
+    //next question's answers will appear in buttons
+    $('#buttonA').text('')
+    $('#buttonB').text('')
+    $('#buttonC').text('')
+    $('#buttonD').text('')
   }
 
   function setUpNewGame() {
@@ -109,9 +135,11 @@ $(document).ready(function() {
     gameStart()
   }
 
-  gameStart()
+  // gameStart()
 
+  //answerChoice click event
   $('.answerChoice').on('click', function() {
+    //if answerChoice id = buttonA, then answerSelected was a (so on for each choice)
     if (this.id === 'buttonA') {
       var answerSelected = 'a'
     } else if (this.id === 'buttonB') {
@@ -122,6 +150,7 @@ $(document).ready(function() {
       answerSelected = 'd'
     }
 
+    //if answerSelected = a and the flag at the 0th index = true
     if (answerSelected === 'a' && questionSet[index].flags[0] === true) {
       correctAnswer()
     } else if (answerSelected === 'a') {
@@ -146,11 +175,7 @@ $(document).ready(function() {
       wrongAnswer()
     }
 
-    $('.question').text('')
-    $('#buttonA').text('')
-    $('#buttonB').text('')
-    $('#buttonC').text('')
-    $('#buttonD').text('')
+    answersAppear()
     index++
 
     if (index < questionSet.length) {
@@ -162,3 +187,8 @@ $(document).ready(function() {
     }
   })
 })
+
+//organize files
+//organize gameStart function, move if statements to a different function = setUPGame, then call that function in gameStart()
+//comment on functions to describe them
+//use jquery to display how many guesses out of how many questions (adding text to html)
