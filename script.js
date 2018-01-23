@@ -5,8 +5,8 @@ $(document).ready(function() {
   var score = 0
   var timer
 
-  $('.checkMark').hide()
-  $('.xMark').hide()
+  $('.check-mark').hide()
+  $('.x-mark').hide()
 
   // hiding four answer choice buttons when game starts, before level-button is clicked
   $('.answerChoice').hide()
@@ -58,18 +58,16 @@ $(document).ready(function() {
   function correctAnswer() {
     index
     score++
-    $('.checkMark').show().delay(200).fadeOut()
-    // setTimeout(function(){
-    //
-    // }, 500)
-    // alert('correct')
+    $('.check-mark').show().delay(200).fadeOut()
+    setTimeout(function(){
+
+    }, 500)
     console.log(score)
   }
 
   function wrongAnswer() {
     index
-    $('.xMark').show().delay(200).fadeOut()
-    // alert('wrong')
+    $('.x-mark').show().delay(200).fadeOut()
     console.log('wrong')
   }
 
@@ -187,8 +185,3 @@ $(document).ready(function() {
     }
   })
 })
-
-//organize files
-//organize gameStart function, move if statements to a different function = setUPGame, then call that function in gameStart()
-//comment on functions to describe them
-//use jquery to display how many guesses out of how many questions (adding text to html)
